@@ -1,0 +1,3 @@
+class MountainController
+
+end
