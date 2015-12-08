@@ -2,7 +2,6 @@ class UserController < ApplicationController
 
 get '/' do
   "Hello World"
-  # erb :login
 end
 
 get '/login' do

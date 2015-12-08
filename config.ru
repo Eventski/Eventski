@@ -9,4 +9,5 @@ require('./models/event_model')
 require('./models/mountain_model')
 
 map('/') {run UserController}
+map('/mountains') {run MountainController}
 map('/events') {run EventController}
