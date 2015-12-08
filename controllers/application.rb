@@ -10,8 +10,8 @@ class ApplicationController < Sinatra::Base
     :adapter => 'postgresql'
   )
 
-set :views, FILE.expand_path('../../views', __FILE__)
-set :public_dir, FILE.expand_path('../../public', __FILE__)
+set :views, File.expand_path('../../views', __FILE__)
+set :public_dir, File.expand_path('../../public', __FILE__)
 
 enable :sessions
 
