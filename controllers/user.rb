@@ -22,7 +22,7 @@ class UserController < ApplicationController
     user = Account.create(user_name: params[:user_name], user_email: params[:user_email],
     password: params[:password])
 
-    session[:current_user]
+    session[:current_user] = user
     redirect '/first'
 
   end
