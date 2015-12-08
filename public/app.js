@@ -151,26 +151,3 @@ function addShow(x){
   var currentShow = showsArr[x][0];
   alert(currentShow + ' added');
 }
-
-
-
-
-
-////////////////////////////////////////
-// function controlFunction(){
-//   $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + latitude + "," + longitude + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
-//   function(data){
-//     console.log('map lat: ' + latitude);
-//     console.log('map long: ' + longitude);
-//     // console.log(data.resultsPage.totalEntries);
-//     for (i=0; i< data.resultsPage.totalEntries; i++){
-//       var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
-//       var date = data.resultsPage.results.event[i].start.date;
-//       var location = data.resultsPage.results.event[i].location.city;
-//       var tempArr = [];
-//       tempArr.push(name, date, location, tempArr);
-//       showsArr.push(tempArr);
-//       $('#showsID').append('<div>'+tempArr+'</div>');
-//     }
-//   });
-// }
