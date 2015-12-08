@@ -10,3 +10,4 @@ gem 'activerecord'
 gem 'activesupport'
 gem 'bcrypt'
 gem 'rake'
+gem "dotenv"
