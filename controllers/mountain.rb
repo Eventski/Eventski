@@ -1,5 +1,6 @@
 class MountainController < ApplicationController
 
+
   get '/' do
     authorization_check
     erb :mt_search
