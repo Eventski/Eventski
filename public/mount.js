@@ -4,13 +4,16 @@ $.ajax(mountainCall);
 
 $("#map").css('display', 'none');
 
+
 $("#btn").click(function() {
   selectMountain();
+  buildClickableList(mountainsInRange);
 });
 
 
-});//end of document.ready
 
+});//end of document.ready
+//initMap(selectMountain);
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
   zoom: 8,
@@ -22,7 +25,8 @@ function initMap() {
     $('#map').css('display', 'block');
     geocodeAddress(geocoder, map);
     google.maps.event.trigger(map, 'resize'); map.setCenter(center);
-    selectMountain();
+    //selectMountain();
+
   });
 }
 
@@ -74,45 +78,64 @@ var countMountains =0;
 var countShows = 0;
 var selectMountainName = '';
 
-
+var tempArr = [];
 
 
 
 function selectMountain(){
-  var mountainsNode = document.getElementById("mountainsId");
-  mountainsNode.innerHTML = '';
-  mountainsInRange = [];
+  // var mountainsNode = document.getElementById("mountainsId");
+  // mountainsNode.innerHTML = '';
   console.log('google place lat: '+ latitude);
   console.log('google place long: '+ longitude);
   for (var i = 0; i < mountainsArr.length; i++) {
-    console.log("mountains");
+    // console.log("mountains");
      var localLat = mountainsArr[i].mountain_lat;
      var localLong = mountainsArr[i].mountain_long;
-     var localName = mountainsArr[i].mountain_name;
+    //  var localName = mountainsArr[i].mountain_name;
+    //  var mtnId = mountainsArr[i].id;
      var absLat = Math.abs(localLat - latitude);
      var absLong = Math.abs(localLong - longitude);
-     console.log(mountainsArr[i].name + 'lat: ' + mountainsArr[i].lat + mountainsArr[i].long);
+    //  console.log(mountainsArr[i].name + 'lat: ' + mountainsArr[i].mountain_lat + mountainsArr[i].mountain_long);
          if (absLat <= 0.5 && absLong <= 0.5) {
-           countMountains = countMountains + 1;
-           var element = document.createElement("input");
-           element.className = 'mountainsClass'
-           element.id = countMountains;
-           element.type = 'button';
-           element.name = 'selectButton';
-           element.value = 'select';
-           element.onclick = function (){
-              chooseOne(this.id);
-            };
-           $('#mountainsId').append(element);
-           $('#mountainsId').append('<div>'+ localName+'</div>');
-           console.log(localName + '--------')
-           console.log('manual lat: ' + localLat);
-           console.log('manual long: ' + localLong);
-         var tempArr = [];
-         tempArr.push(localLat, localLong, localName);
-         mountainsInRange.push(tempArr);
+           mountainsInRange.push(mountainsArr[i]);
          }
+       }
+     }
+
+           //break;
+          //  countMountains = countMountains + 1;
+//            var element = document.createElement("input");
+//            var mtnId = mountainsArr[i].id;
+//            element.className = 'mountainsClass'
+//           //  element.id = mtnId;
+//            console.log(mtnId);
+//            element.type = 'button';
+//            element.name = 'selectButton';
+//            element.value = 'select';
+//            element.onclick = function (){
+//               location.href = "events/"+mtnId;
+//             };
+//            $('#mountainsId').append(element);
+//            $('#mountainsId').append('<div>'+ localName+'</div>');
+//            console.log(localName + '--------')
+//            console.log('manual lat: ' + localLat);
+//            console.log('manual long: ' + localLong);
+//         //  var tempArr = [];
+//         //  tempArr.push(localLat, localLong, localName);
+//         //  mountainsInRange.push(tempArr);
+//          }
+//   }
+//   return mountainsInRange;
+//
+// }
+
+function buildClickableList(arrayOfMountains) {
+  for (var i = 0; i < arrayOfMountains.length; i++) {
+     $('body').append("<li><a href='events/" + arrayOfMountains[i].id + "'</a>"+ arrayOfMountains[i].mountain_name + '</li>')
   }
+  // create li's
+  // append to DOM
+  // loop through
 }
 
 //function to be run when mountain button is selected. This sets global 'selectMountainLat' and Long
@@ -133,9 +156,9 @@ function songkickFunction(){
   $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + selectMountainLat + "," + selectMountainLong + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
   function(data){
 
-    var titleNode = document.getElementById("titleID");
+    var titleNode = document.getElementById("titleId");
     titleNode.innerHTML = '';
-    $('#titleID').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
+    $('#titleId').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
     var showsNode = document.getElementById("showsID");
     showsNode.innerHTML = '';
     // console.log(data);
