@@ -11,7 +11,6 @@ class MountainController < ApplicationController
     erb :results
   end
 
-
   get '/mountain' do
     authorization_check
     @mountains = Mountain.all

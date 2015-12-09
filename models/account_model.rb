@@ -1,5 +1,9 @@
 class Account < ActiveRecord::Base
+  #self.table_name = 'accounts'
+
   include BCrypt
+
+
 
   def password=(pwd)
     self.password_digest = BCrypt::Password.create(pwd)
