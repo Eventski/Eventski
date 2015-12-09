@@ -7,9 +7,11 @@ function initMap() {
   center: {lat: -34.397, lng: 150.644}
   });
   var geocoder = new google.maps.Geocoder();
-
+  var center = map.getCenter();
   document.getElementById('submit').addEventListener('click', function() {
-  geocodeAddress(geocoder, map);
+    $('#map').css('display', 'block');
+    geocodeAddress(geocoder, map);
+    google.maps.event.trigger(map, 'resize'); map.setCenter(center);
   });
 }
 

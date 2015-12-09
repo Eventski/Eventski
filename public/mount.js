@@ -2,10 +2,10 @@ $(document).ready(function() {
 
 $.ajax(mountainCall);
 
-$("#map").hide();
-$('#submit').click(function() {
-   $('#map').show();
- });
+$("#map").css('display', 'none');
+// $('#submit').click(function() {
+//    $('#map').show();
+//  });
 
 });//end of document.ready
 var mountains = []
