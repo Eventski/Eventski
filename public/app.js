@@ -1,3 +1,6 @@
+
+
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
   zoom: 8,
@@ -37,25 +40,29 @@ var selectMountainLat = 0;
 var selectMountainLong = 0;
 var showsArr =[];
 
-var sugarbush = {name: "sugarbush",lat: 44.1069,long: -72.8581};
-var stowe = {name: "stowe",lat: 44.4753,long: -72.7022};
-var killington = {name: "killington",lat: 43.6236,long: -72.7933};
-var wildcat = {name: "wildcat",lat: 44.3878 ,long: -71.1731};
-var whaleback = {name: "whaleback" ,lat: 43.6417,long: -72.1453};
-var tuckerman = {name: "tuckerman" ,lat: 44.2625,long: -71.2983};
-var stratton = {name: "stratton",lat: 43.0614,long:-72.9042};
-var mountSnow = {name: "mountSnow",lat: 42.9589 ,long: -72.9236};
-var middlebury = {name: "middlebury",lat: 44.0019,long: -73.1456};
-var magicMountain = {name: "magicMountain",lat: 42.1928,long:-72.7600};
-var jayPeak = {name: "jaypeak",lat: 44.9650,long: -72.4597};
-var attitash = {name: "attitash",lat: 44.0822,long: -71.2297};
-var bolton = {name: "bolton",lat: 44.4158,long: -72.8697};
-
-var mountainsArr = [sugarbush, stowe, killington, wildcat, whaleback, tuckerman, stratton, mountSnow, middlebury, magicMountain, jayPeak, attitash, bolton];
+// var sugarbush = {name: "sugarbush",lat: 44.1069,long: -72.8581};
+// var stowe = {name: "stowe",lat: 44.4753,long: -72.7022};
+// var killington = {name: "killington",lat: 43.6236,long: -72.7933};
+// var wildcat = {name: "wildcat",lat: 44.3878 ,long: -71.1731};
+// var whaleback = {name: "whaleback" ,lat: 43.6417,long: -72.1453};
+// var tuckerman = {name: "tuckerman" ,lat: 44.2625,long: -71.2983};
+// var stratton = {name: "stratton",lat: 43.0614,long:-72.9042};
+// var mountSnow = {name: "mountSnow",lat: 42.9589 ,long: -72.9236};
+// var middlebury = {name: "middlebury",lat: 44.0019,long: -73.1456};
+// var magicMountain = {name: "magicMountain",lat: 42.1928,long:-72.7600};
+// var jayPeak = {name: "jaypeak",lat: 44.9650,long: -72.4597};
+// var attitash = {name: "attitash",lat: 44.0822,long: -71.2297};
+// var bolton = {name: "bolton",lat: 44.4158,long: -72.8697};
+//
+// var mountainsArr = [sugarbush, stowe, killington, wildcat, whaleback, tuckerman, stratton, mountSnow, middlebury, magicMountain, jayPeak, attitash, bolton];
 var mountainsInRange = [];
 var countMountains =0;
 var countShows = 0;
 var selectMountainName = '';
+
+
+
+
 
 function selectMountain(){
   var mountainsNode = document.getElementById("mountainsID");
