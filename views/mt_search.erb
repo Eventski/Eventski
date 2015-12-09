@@ -1,6 +1,12 @@
-<form class="" action="/mountains/results" method="post">
+<div id="floating-panel">
+  <input id="address" type="textbox" placeholder="Search">
+  <input id="submit" type="button" value="Submit">
+</div>
+<div id="map"></div>
 
 
-<input id="search" type="text" name="search" placeholder="Search">
-<input id="submit2" type="submit" value="Submit">
-</form>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&signed_in=true&callback=initMap"
+    async defer>
+</script>
