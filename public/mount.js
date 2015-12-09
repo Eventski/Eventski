@@ -1,7 +1,11 @@
 $(document).ready(function() {
 
 $.ajax(mountainCall);
-// plugIn();
+
+$("#map").hide();
+$('#submit').click(function() {
+   $('#map').show();
+ });
 
 });//end of document.ready
 var mountains = []
@@ -16,7 +20,7 @@ var mountainCall = {
   }
 }
 
-// function plugIn() {
-// var mtSearch = $("#search");
-// $("#address").val(mtSearch);
-// }
+
+  $('#submit').onclick = function (){
+     $('#map').show();
+   };
