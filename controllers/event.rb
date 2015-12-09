@@ -18,4 +18,8 @@ class EventController < ApplicationController
     erb :list
   end
 
+  post '/save' do
+    
+  end
+
 end

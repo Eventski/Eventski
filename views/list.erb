@@ -5,5 +5,79 @@
 <%= @mtn.mountain_lat %>;
 <%= @mtn.mountain_long %>
 
-<input type="button" name="name" value="find shows" onclick="songkickFunction()">
-<div id='showsID'></div>
+<div id='shows'>
+  <table>
+    <thead>
+      <th>
+        Name
+      </th>
+      <th>
+        Date
+      </th>
+      <th>
+        Location
+      </th>
+      <th>
+        URL
+      </th>
+      <th>
+        Save Show
+      </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="name">
+
+        </td>
+        <td id="date">
+
+        </td>
+        <td id="location">
+
+        </td>
+        <td id="url">
+
+        </td>
+        <td id="save">
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script type="text/javascript">
+var artistArray = [];
+$.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + <%= @mtn.mountain_lat %> + "," + <%= @mtn.mountain_long %> + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
+function(data){
+  console.log(data);
+  for (i=0; i< data.resultsPage.totalEntries; i++){
+    var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
+    var date = data.resultsPage.results.event[i].start.date;
+    var location = data.resultsPage.results.event[i].location.city;
+    var url = data.resultsPage.results.event[i].performance[0].artist.uri;
+
+    var currentShow = new Object();
+    currentShow.name = name;
+    currentShow.date = date;
+    currentShow.location = location;
+    currentShow.url = url;
+
+    // $("#shows").append(currentShow.name);
+    artistArray.push(currentShow);
+  }
+  for (var i = 0; i < artistArray.length; i++) {
+    console.log(artistArray[i].name)
+    $("#name").append(artistArray[i].name + '</p>');
+    $("#date").append(artistArray[i].date + '</p>');
+    $("#location").append(artistArray[i].location + '</p>');
+    $("#url").append(artistArray[i].url + '</p>');
+    $("#save").append("<a href='events/save'>Save</a>" +'</p>');
+  }
+})
+ // for (var i = 0; i < artistArray.length; i++) {
+ //   console.log(artistArray[i].name)
+ //   $("#name").append(artistArray[i].name);
+ // }
+
+</script>
