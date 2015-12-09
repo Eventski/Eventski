@@ -40,18 +40,15 @@
 //   });
 // }
 
-function songkickFunction(){
+function songkickFunction(x){
   $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + selectMountainLat + "," + selectMountainLong + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
   function(data){
-    console.log('songkick function works');
-    var titleNode = document.getElementById("titleID");
+    console.log(x);
+    var titleNode = document.ungetElementById("titleID");
     titleNode.innerHTML = '';
     $('#titleID').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
     var showsNode = document.getElementById("showsID");
     showsNode.innerHTML = '';
-    // console.log(data);
-    // console.log('mountain lat: ' + selectMountainLat);
-    // console.log('mountain long: ' + selectMountainLong);
     for (i=0; i< data.resultsPage.totalEntries; i++){
       countShows = countShows + 1;
       var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
