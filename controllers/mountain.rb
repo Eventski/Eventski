@@ -8,9 +8,6 @@ class MountainController < ApplicationController
   post '/results' do
     "Hello there"
     erb :results
-    <script type="text/javascript">
-     myfunction();
-     </script>
   end
 
   get '/mountain' do
