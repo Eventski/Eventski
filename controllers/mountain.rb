@@ -1,8 +1,5 @@
 class MountainController < ApplicationController
 
-<<<<<<< HEAD
-
-=======
   get '/' do
     erb :mt_search
   end
@@ -10,8 +7,10 @@ class MountainController < ApplicationController
   post '/results' do
     "Hello there"
     erb :results
+    <script type="text/javascript">
+     myfunction();
+     </script>
   end
->>>>>>> 930c9cd1d8e157443963f25129cd0bd9f87d75b3
 
   get '/mountain' do
     @mountains = Mountain.all
