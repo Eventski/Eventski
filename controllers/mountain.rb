@@ -2,8 +2,8 @@ class MountainController < ApplicationController
 
   get '/mountain' do
     @mountains = Mountain.all
-    puts @mountains
-    erb :mountain
+    @mountains.to_json
+    
   end
 
 end
