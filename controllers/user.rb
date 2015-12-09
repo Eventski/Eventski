@@ -18,6 +18,7 @@ class UserController < ApplicationController
   post '/register' do
     if does_user_exist(params[:user_name]) == true
       @message = "That username already exists, try a different one."
+      erb :login
     end
     user = Account.create(user_name: params[:user_name], user_email: params[:user_email],
     password: params[:password])

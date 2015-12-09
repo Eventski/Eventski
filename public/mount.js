@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 $.ajax(mountainCall);
+// plugIn();
 
 });//end of document.ready
 var mountains = []
@@ -14,3 +15,8 @@ var mountainCall = {
     mountains.push(data);
   }
 }
+
+// function plugIn() {
+// var mtSearch = $("#search");
+// $("#address").val(mtSearch);
+// }

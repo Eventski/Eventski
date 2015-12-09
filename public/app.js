@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
 
 
 function initMap() {
@@ -158,5 +158,3 @@ function addShow(x){
   var currentShow = showsArr[x][0];
   alert(currentShow + ' added');
 }
-
-});//end of document.ready
