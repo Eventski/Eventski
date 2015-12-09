@@ -12,6 +12,11 @@ class EventController < ApplicationController
     erb :remove
   end
 
+  get '/mountain_page' do
+    'mountain page'
+  end
+
+
   get '/:id' do
     @mtn= Mountain.find(params[:id])
     @mtn.id
@@ -19,7 +24,7 @@ class EventController < ApplicationController
   end
 
   post '/save' do
-    
+
   end
 
 end

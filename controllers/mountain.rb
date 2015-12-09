@@ -17,4 +17,6 @@ class MountainController < ApplicationController
     @mountains.to_json
   end
 
+
+
 end

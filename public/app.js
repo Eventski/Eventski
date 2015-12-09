@@ -37,6 +37,7 @@
 //   });
 // }
 
+
 // function songkickFunction(){
 //   $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + selectMountainLat + "," + selectMountainLong + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
 //   function(data){
@@ -75,6 +76,43 @@
 //     }
 //   });
 // }
+// 
+// function songkickFunction(x){
+//   $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + selectMountainLat + "," + selectMountainLong + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
+//   function(data){
+//     console.log(x);
+//     var titleNode = document.ungetElementById("titleID");
+//     titleNode.innerHTML = '';
+//     $('#titleID').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
+//     var showsNode = document.getElementById("showsID");
+//     showsNode.innerHTML = '';
+//     for (i=0; i< data.resultsPage.totalEntries; i++){
+//       countShows = countShows + 1;
+//       var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
+//       var date = data.resultsPage.results.event[i].start.date;
+//       var location = data.resultsPage.results.event[i].location.city;
+//       var tempArr = [];
+//       ///////
+//       var element = document.createElement("input");
+//       element.className = 'showButtonClass'
+//       element.id = countShows;
+//       element.type = 'button';
+//       element.name = 'selectShowsButton';
+//       element.value = 'select';
+//       element.onclick = function (){
+//          addShow(this.id);
+//        };
+//       ///////
+//       console.log(element.className, element.id, element.type, element.name, element.value);
+//       tempArr.push(name, date, location, tempArr);
+//       showsArr.push(tempArr);
+//       // $('#showsID').append('<div>'+tempArr+'</div>');
+//       $('#showsID').append(element);
+//       $('#showsID').append('<div>'+ tempArr+'</div>');
+//     }
+//   });
+// }
+
 
 
 // var latitude = 0;

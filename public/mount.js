@@ -155,10 +155,18 @@ function chooseOne(x){
 function songkickFunction(){
   $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + selectMountainLat + "," + selectMountainLong + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
   function(data){
+    console.log('songkick runs');
+    console.log('lat' + selectMountainLat);
+    console.log('lat' + selectMountainLong);
+    //
+    // var titleNode = document.getElementById("titleID");
+    // titleNode.innerHTML = '';
+    // $('#titleID').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
 
     var titleNode = document.getElementById("titleId");
     titleNode.innerHTML = '';
     $('#titleId').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
+
     var showsNode = document.getElementById("showsID");
     showsNode.innerHTML = '';
     // console.log(data);
