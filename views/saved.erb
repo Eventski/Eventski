@@ -3,6 +3,9 @@ rackup<h2>Saved Events</h2>
 <table>
   <thead>
     <th>
+      id
+    </th>
+    <th>
       day
     </th>
     <th>
@@ -20,6 +23,9 @@ rackup<h2>Saved Events</h2>
   <% @saved.each do |saved |%>
   <tr>
     <td>
+      <%= saved.id %>
+    </td>
+    <td>
       <%= saved.day %>
     </td>
     <td>
@@ -28,6 +34,12 @@ rackup<h2>Saved Events</h2>
     <td>
       <%= saved.event_url %>
     </td>
+    <td>
+      <form action="/" method="post">
+        <input type="hidden" name="id" value="">
+      </form>
+    </td>
+
   </tr>
 </tbody>
 

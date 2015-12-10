@@ -15,6 +15,9 @@ html, body {
 .showButtonClass {
   float: left; }
 
+#save {
+  padding: 0px; }
+
 #map {
   height: 50%;
   width: 70%; }

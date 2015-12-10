@@ -6,16 +6,21 @@
 <%= @mtn.mountain_long %>
 <% @mtn.id %>
 
+
+
 <div id='shows'>
+</p>
+  <strong><a href='events/save'>Go To My Shows</a></strong>
+</p>
   <table>
     <thead>
-      <th>
+      <th width = "40%">
         Name
       </th>
-      <th>
+      <th width = "20%">
         Date
       </th>
-      <th>
+      <th width = "20%">
         Location
       </th>
       <th>
@@ -48,6 +53,7 @@
 </div>
 
 <script type="text/javascript">
+var countShows = 0;
 var artistArray = [];
 $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + <%= @mtn.mountain_lat %> + "," + <%= @mtn.mountain_long %> + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
 function(data){
@@ -57,14 +63,11 @@ function(data){
     var date = data.resultsPage.results.event[i].start.date;
     var location = data.resultsPage.results.event[i].location.city;
     var url = data.resultsPage.results.event[i].performance[0].artist.uri;
-
     var currentShow = new Object();
-    currentShow.name = name;
-    currentShow.date = date;
-    currentShow.location = location;
-    currentShow.url = url;
-
-    // $("#shows").append(currentShow.name);
+      currentShow.name = name;
+      currentShow.date = date;
+      currentShow.location = location;
+      currentShow.url = url;
     artistArray.push(currentShow);
   }
   for (var i = 0; i < artistArray.length; i++) {
@@ -72,43 +75,47 @@ function(data){
     $("#name").append(artistArray[i].name + '</p>');
     $("#date").append(artistArray[i].date + '</p>');
     $("#location").append(artistArray[i].location + '</p>');
-    $("#url").append(artistArray[i].url + '</p>');
-    $("#save").append("<a href='events/save'>Save</a>" +'</p>');
-  }
-})
+    $("#url").append('<a href='+artistArray[i].url+'>go to website</a></p>');
+      countShows = countShows + 1;
+      var element = document.createElement("input");
+      element.className = 'mountainsClass'
+      element.id = countShows;
+      element.type = 'button';
+      element.name = 'selectButton';
+      element.value = 'save';
+      element.onclick = function (){
+        genShowValues(this.id);
+      }
+    $("#save").append(element);
+    $("#save").append('</p>');
+}})
 
-var dateVar = 2016-04-08;
-var nameVar = "testtttt";
-var urlVar = "http://www.songkick.com";
-var mtnVar = 1;
+var idVar;
+var dateVar;
+var nameVar;
+var urlVar;
+var mtnVar;
 
-var dataVar = {date: '1/1/1', name: 'test', url: 'google.com', mountalin: 1};
-
-// var dataSend = {
-//   type: "POST",
-//   url: '/events/save',
-//   dataType: 'json',
-//   data: dataVar
-// }
-
-////////////////BELOW IS WORKING VERSION
-var dataSend = {
-  type: "post",
-  url: '/events/save',
-  dataType: 'json',
-  data: {
-    date: 2016-04-08,
-    name: "The Tsunamibots",
-    url: "http://www.songkick.com/artists/8451818-tsunamibots?utm_source=37912&utm_medium=partner",
-    mountain:1
-  }
+function genShowValues(value){
+  idVar = artistArray[value].id
+  dateVar = artistArray[value].date;
+  nameVar = artistArray[value].name;
+  urlVar = artistArray[value].url;
+  runAjax(dateVar, nameVar, urlVar);
 }
 
-////////////////
-$("#save").click(function(){
-  $.ajax(dataSend);
-})
-
-
+function runAjax(x,y,z){
+  $.ajax({
+    type: "POST",
+    url: '/events/save',
+    dataType: 'json',
+    data: {
+        date: dateVar,
+        name: nameVar,
+        id: idVar
+        // url: urlVar
+    }
+  });
+}
 
 </script>
