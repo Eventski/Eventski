@@ -76,7 +76,7 @@
 //     }
 //   });
 // }
-// 
+//
 // function songkickFunction(x){
 //   $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + selectMountainLat + "," + selectMountainLong + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
 //   function(data){
@@ -161,8 +161,8 @@
 //            console.log('manual lat: ' + localLat);
 //            console.log('manual long: ' + localLong);
 //          var tempArr = [];
-//          tempArr.push(localLat, localLong, localName);
-//          mountainsInRange.push(tempArr);
+        //  tempArr.push(localLat, localLong, localName);
+        //  mountainsInRange.push(tempArr);
 //          }
 //   }
 // }
@@ -170,7 +170,7 @@
 // //function to be run when mountain button is selected. This sets global 'selectMountainLat' and Long
 // //so that songkickFunction can pull these coordinates
 // function chooseOne(x){
-//   var x = x-1;
+// //   var x = x-1;
 //   var currentMountain = new Object();
 //   currentMountain.latitude = mountainsInRange[x][0];
 //   currentMountain.longitude = mountainsInRange[x][1];
@@ -178,7 +178,7 @@
 //   selectMountainLat = currentMountain.latitude;
 //   selectMountainLong = currentMountain.longitude;
 //   selectMountainName = currentMountain.name;
-// }
+// // }
 //
 //
 // function songkickFunction(){
@@ -193,12 +193,12 @@
 //     // console.log(data);
 //     // console.log('mountain lat: ' + selectMountainLat);
 //     // console.log('mountain long: ' + selectMountainLong);
-//     for (i=0; i< data.resultsPage.totalEntries; i++){
-//       countShows = countShows + 1;
-//       var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
-//       var date = data.resultsPage.results.event[i].start.date;
-//       var location = data.resultsPage.results.event[i].location.city;
-//       var tempArr = [];
+    for (i=0; i< data.resultsPage.totalEntries; i++){
+      countShows = countShows + 1;
+      var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
+      var date = data.resultsPage.results.event[i].start.date;
+      var location = data.resultsPage.results.event[i].location.city;
+      var tempArr = [];
 //       ///////
 //       var element = document.createElement("input");
 //       element.className = 'showButtonClass'

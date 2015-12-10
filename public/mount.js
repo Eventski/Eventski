@@ -169,9 +169,7 @@ function songkickFunction(){
 
     var showsNode = document.getElementById("showsID");
     showsNode.innerHTML = '';
-    // console.log(data);
-    // console.log('mountain lat: ' + selectMountainLat);
-    // console.log('mountain long: ' + selectMountainLong);
+
     for (i=0; i< data.resultsPage.totalEntries; i++){
       countShows = countShows + 1;
       var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
