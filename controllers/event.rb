@@ -10,18 +10,24 @@ class EventController < ApplicationController
     erb :new
   end
 
-  get '/remove' do
-    authorization_check
-    erb :remove
-  end
+  get '/events/destroy/:id' do
+     @saved = Event.find(params[:id])
+     @saved.id
+     erb :remove
+   end
 
-  # get '/mountain_page' do
-  #   'mountain page'
+   post '/events/destroy' do
+     @event = Event.find(params[:id])
+     @event.destroy
+
+     erb :remove
+
+   end
+
+
+  # get '/saved' do
+  #   erb :saved
   # end
-  #
-  get '/saved' do
-    erb :saved
-  end
 
   get '/:id' do
     authorization_check
@@ -31,7 +37,6 @@ class EventController < ApplicationController
   end
 
   post '/save' do
-  # post 'events/save' do -------this breaks the save to table ability
     @event = Event.new
     @event.day = params[:date]
     @event.event_name = params[:name]
@@ -39,7 +44,6 @@ class EventController < ApplicationController
     @event.event_user_id = session[:current_user].id
     @event.event_mountain_id = params[:mtn]
     @event.save
-    erb :new
   end
 
   # get '/save' do
@@ -51,6 +55,8 @@ class EventController < ApplicationController
   get '/events/destroy/:id' do
     @saved = Event.find(params[:id])
     @saved.id
+    @saved = Event.where(event_user_id: session[:current_user].id)
+
     erb :saved
   end
 
