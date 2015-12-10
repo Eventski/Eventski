@@ -5,7 +5,6 @@ html, body {
  }
 .mountainsClass{
  float: left;
- /*width: 20px;*/
 }
 .mountainsClass:target,
 .mountainsClass:focus
@@ -20,6 +19,7 @@ background-color:#87CEFA ;
 
 #save{
   padding: 0px;
+  background-color: lightgrey;
 }
 
 #map {

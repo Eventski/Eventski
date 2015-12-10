@@ -2,16 +2,16 @@ rackup<h2>Saved Events</h2>
 
 <table>
   <thead>
-    <th>
+    <th style="width: 10%">
       id
     </th>
-    <th>
+    <th style="width: 15%">
       day
     </th>
-    <th>
+    <th style="width: 30%">
       show
     </th>
-    <th>
+    <th style="width: 20%">
       url
     </th>
     <th>
@@ -35,8 +35,9 @@ rackup<h2>Saved Events</h2>
       <%= saved.event_url %>
     </td>
     <td>
-      <form action="/" method="post">
-        <input type="hidden" name="id" value="">
+      <form action="/events/events/destroy" method="post">
+        <input type="hidden" name="id" value="<%= saved.id %>">
+        <input type="submit" value="remove"></input>
       </form>
     </td>
 

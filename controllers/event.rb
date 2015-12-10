@@ -37,15 +37,29 @@ class EventController < ApplicationController
     @event.event_name = params[:name]
     @event.event_url = params[:url]
     @event.event_user_id = session[:current_user].id
-    @event.event_mountain_id = 1
+    @event.event_mountain_id = params[:mtn]
     @event.save
     erb :new
   end
 
+  # get '/save' do
   get '/events/save' do
-    @saved = Event.all
+   @saved = Event.where(event_user_id: session[:current_user].id)
+   erb :saved
+ end
+
+  get '/events/destroy/:id' do
+    @saved = Event.find(params[:id])
+    @saved.id
     erb :saved
   end
 
+  post '/events/destroy' do
+    'testing'
+    @saved = Event.find(params[:id])
+    @saved.destroy
+    # redirect ('/events/save')
+    # erb :saved
+  end
 
 end
