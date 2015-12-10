@@ -3,7 +3,7 @@ $(document).ready(function() {
 $.ajax(mountainCall);
 
 $("#map").css('display', 'none');
-
+$("#btn").css('display', 'none');
 
 $("#btn").click(function() {
   selectMountain();
@@ -25,7 +25,7 @@ function initMap() {
     $('#map').css('display', 'block');
     geocodeAddress(geocoder, map);
     google.maps.event.trigger(map, 'resize'); map.setCenter(center);
-    //selectMountain();
+    $('#btn').css('display', 'block');
 
   });
 }
