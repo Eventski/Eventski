@@ -4,6 +4,7 @@
 <%= @mtn.mountain_url %></p>
 <%= @mtn.mountain_lat %>;
 <%= @mtn.mountain_long %>
+<% @mtn.id %>
 
 <div id='shows'>
   <table>
@@ -75,9 +76,22 @@ function(data){
     $("#save").append("<a href='events/save'>Save</a>" +'</p>');
   }
 })
- // for (var i = 0; i < artistArray.length; i++) {
- //   console.log(artistArray[i].name)
- //   $("#name").append(artistArray[i].name);
- // }
+var dataSend = {
+  type: "post",
+  url: '/events/save',
+  dataType: 'json',
+  data: {
+    date: 2016-04-08,
+    name: "The Tsunamibots",
+    url: "http://www.songkick.com/artists/8451818-tsunamibots?utm_source=37912&utm_medium=partner",
+    mountain:1
+  }
+}
+
+$("#save").click(function(){
+  $.ajax(dataSend);
+})
+
+
 
 </script>
