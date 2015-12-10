@@ -1,1 +1,34 @@
-<h2>Saved Events</h2>
+rackup<h2>Saved Events</h2>
+
+<table>
+  <thead>
+    <th>
+      day
+    </th>
+    <th>
+      show
+    </th>
+    <th>
+      url
+    </th>
+    <th>
+      remove?
+    </th>
+  </thead>
+
+<tbody>
+  <% @saved.each do |saved |%>
+  <tr>
+    <td>
+      <%= saved.day %>
+    </td>
+    <td>
+      <%= saved.event_name %>
+    </td>
+    <td>
+      <%= saved.event_url %>
+    </td>
+  </tr>
+</tbody>
+
+  <% end %>

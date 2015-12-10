@@ -76,6 +76,22 @@ function(data){
     $("#save").append("<a href='events/save'>Save</a>" +'</p>');
   }
 })
+
+var dateVar = 2016-04-08;
+var nameVar = "testtttt";
+var urlVar = "http://www.songkick.com";
+var mtnVar = 1;
+
+var dataVar = {date: '1/1/1', name: 'test', url: 'google.com', mountalin: 1};
+
+// var dataSend = {
+//   type: "POST",
+//   url: '/events/save',
+//   dataType: 'json',
+//   data: dataVar
+// }
+
+////////////////BELOW IS WORKING VERSION
 var dataSend = {
   type: "post",
   url: '/events/save',
@@ -88,6 +104,7 @@ var dataSend = {
   }
 }
 
+////////////////
 $("#save").click(function(){
   $.ajax(dataSend);
 })

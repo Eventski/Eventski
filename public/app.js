@@ -193,12 +193,12 @@
 //     // console.log(data);
 //     // console.log('mountain lat: ' + selectMountainLat);
 //     // console.log('mountain long: ' + selectMountainLong);
-    for (i=0; i< data.resultsPage.totalEntries; i++){
-      countShows = countShows + 1;
-      var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
-      var date = data.resultsPage.results.event[i].start.date;
-      var location = data.resultsPage.results.event[i].location.city;
-      var tempArr = [];
+    // for (i=0; i< data.resultsPage.totalEntries; i++){
+    //   countShows = countShows + 1;
+    //   var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
+    //   var date = data.resultsPage.results.event[i].start.date;
+    //   var location = data.resultsPage.results.event[i].location.city;
+    //   var tempArr = [];
 //       ///////
 //       var element = document.createElement("input");
 //       element.className = 'showButtonClass'

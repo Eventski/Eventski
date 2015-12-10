@@ -30,7 +30,7 @@ class EventController < ApplicationController
     erb :list
   end
 
-  post '/save' do
+  post 'events/save' do
     @event = Event.new
     @event.day = params[:date]
     @event.event_name = params[:name]
@@ -40,5 +40,11 @@ class EventController < ApplicationController
     @event.save
     erb :new
   end
+
+  get '/events/save' do
+    @saved = Event.all
+    erb :saved
+  end
+
 
 end
