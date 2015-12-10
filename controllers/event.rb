@@ -10,10 +10,19 @@ class EventController < ApplicationController
     erb :new
   end
 
-  get '/remove' do
-    authorization_check
-    erb :remove
-  end
+  get '/events/destroy/:id' do
+     @saved = Event.find(params[:id])
+     @saved.id
+     erb :remove
+   end
+
+   post '/events/destroy' do
+     @event = Event.find(params[:id])
+     @event.destroy
+
+     erb :remove
+
+   end
 
 
   # get '/saved' do
@@ -33,9 +42,8 @@ class EventController < ApplicationController
     @event.event_name = params[:name]
     @event.event_url = params[:url]
     @event.event_user_id = session[:current_user].id
-    @event.event_mountain_id = 1
+    @event.event_mountain_id = params[:mtn]
     @event.save
-    erb :new
   end
 
   get '/events/save' do

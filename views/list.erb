@@ -84,7 +84,7 @@ function(data){
       element.name = 'selectButton';
       element.value = 'save';
       element.onclick = function (){
-        genShowValues(this.id);
+        genShowValues(this.id - 1);
       }
     $("#save").append(element);
     $("#save").append('</p>');
@@ -94,7 +94,7 @@ var idVar;
 var dateVar;
 var nameVar;
 var urlVar;
-var mtnVar;
+var mtnVar = <%= @mtn.id %>;
 
 function genShowValues(value){
   idVar = artistArray[value].id
@@ -112,8 +112,9 @@ function runAjax(x,y,z){
     data: {
         date: dateVar,
         name: nameVar,
-        id: idVar
-        // url: urlVar
+        id: idVar,
+        url: urlVar,
+        mtn: mtnVar
     }
   });
 }
