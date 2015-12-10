@@ -1,3 +1,4 @@
+
 <div id="floating-panel">
   <input id="address" type="textbox" placeholder="Input Location">
   <input id="submit" type="button" value="Submit">
@@ -5,15 +6,11 @@
 <div id="map"></div>
 
 <button id="btn" type="button" name="button">Find Mountains</button>
-<div id="mountainsId">
-
+<div class="mtn_list">
+  
 </div>
-<div id="titleId">
 
-</div>
-<div id="showsID">
 
-</div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&signed_in=true&callback=initMap"
     async defer>

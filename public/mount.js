@@ -131,7 +131,7 @@ function selectMountain(){
 
 function buildClickableList(arrayOfMountains) {
   for (var i = 0; i < arrayOfMountains.length; i++) {
-     $('body').append("<li><a href='events/" + arrayOfMountains[i].id + "'</a>"+ arrayOfMountains[i].mountain_name + '</li>')
+     $('.mtn_list').append("<li class='mtns'><a href='events/" + arrayOfMountains[i].id + "'</a>"+ arrayOfMountains[i].mountain_name + '</li>')
   }
   // create li's
   // append to DOM
@@ -140,65 +140,65 @@ function buildClickableList(arrayOfMountains) {
 
 //function to be run when mountain button is selected. This sets global 'selectMountainLat' and Long
 //so that songkickFunction can pull these coordinates
-function chooseOne(x){
-  var x = x-1;
-  var currentMountain = new Object();
-  currentMountain.latitude = mountainsInRange[x][0];
-  currentMountain.longitude = mountainsInRange[x][1];
-  currentMountain.name = mountainsInRange[x][2];
-  selectMountainLat = currentMountain.latitude;
-  selectMountainLong = currentMountain.longitude;
-  selectMountainName = currentMountain.name;
-}
+// function chooseOne(x){
+//   var x = x-1;
+//   var currentMountain = new Object();
+//   currentMountain.latitude = mountainsInRange[x][0];
+//   currentMountain.longitude = mountainsInRange[x][1];
+//   currentMountain.name = mountainsInRange[x][2];
+//   selectMountainLat = currentMountain.latitude;
+//   selectMountainLong = currentMountain.longitude;
+//   selectMountainName = currentMountain.name;
+// }
 
+//
+// function songkickFunction(){
+//   $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + selectMountainLat + "," + selectMountainLong + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
+//   function(data){
+//     console.log('songkick runs');
+//     console.log('lat' + selectMountainLat);
+//     console.log('lat' + selectMountainLong);
+//     //
+//     // var titleNode = document.getElementById("titleID");
+//     // titleNode.innerHTML = '';
+//     // $('#titleID').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
+//
+//     var titleNode = document.getElementById("titleId");
+//     titleNode.innerHTML = '';
+//     $('#titleId').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
+//
+//     var showsNode = document.getElementById("showsID");
+//     showsNode.innerHTML = '';
+//
+//     for (i=0; i< data.resultsPage.totalEntries; i++){
+//       countShows = countShows + 1;
+//       var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
+//       var date = data.resultsPage.results.event[i].start.date;
+//       var location = data.resultsPage.results.event[i].location.city;
+//       var tempArr = [];
+//       ///////
+//       var element = document.createElement("input");
+//       element.className = 'showButtonClass'
+//       element.id = countShows;
+//       element.type = 'button';
+//       element.name = 'selectShowsButton';
+//       element.value = 'select';
+//       element.onclick = function (){
+//          addShow(this.id);
+//        };
+//       ///////
+//       console.log(element.className, element.id, element.type, element.name, element.value);
+//       tempArr.push(name, date, location, tempArr);
+//       showsArr.push(tempArr);
+//       // $('#showsID').append('<div>'+tempArr+'</div>');
+//       $('#showsID').append(element);
+//       $('#showsID').append('<div>'+ tempArr+'</div>');
+//     }
+//   });
+// }
 
-function songkickFunction(){
-  $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + selectMountainLat + "," + selectMountainLong + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
-  function(data){
-    console.log('songkick runs');
-    console.log('lat' + selectMountainLat);
-    console.log('lat' + selectMountainLong);
-    //
-    // var titleNode = document.getElementById("titleID");
-    // titleNode.innerHTML = '';
-    // $('#titleID').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
-
-    var titleNode = document.getElementById("titleId");
-    titleNode.innerHTML = '';
-    $('#titleId').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
-
-    var showsNode = document.getElementById("showsID");
-    showsNode.innerHTML = '';
-
-    for (i=0; i< data.resultsPage.totalEntries; i++){
-      countShows = countShows + 1;
-      var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
-      var date = data.resultsPage.results.event[i].start.date;
-      var location = data.resultsPage.results.event[i].location.city;
-      var tempArr = [];
-      ///////
-      var element = document.createElement("input");
-      element.className = 'showButtonClass'
-      element.id = countShows;
-      element.type = 'button';
-      element.name = 'selectShowsButton';
-      element.value = 'select';
-      element.onclick = function (){
-         addShow(this.id);
-       };
-      ///////
-      console.log(element.className, element.id, element.type, element.name, element.value);
-      tempArr.push(name, date, location, tempArr);
-      showsArr.push(tempArr);
-      // $('#showsID').append('<div>'+tempArr+'</div>');
-      $('#showsID').append(element);
-      $('#showsID').append('<div>'+ tempArr+'</div>');
-    }
-  });
-}
-
-function addShow(x){
-  var x = x -1;
-  var currentShow = showsArr[x][0];
-  alert(currentShow + ' added');
-}
+// function addShow(x){
+//   var x = x -1;
+//   var currentShow = showsArr[x][0];
+//   alert(currentShow + ' added');
+// }

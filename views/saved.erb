@@ -1,10 +1,24 @@
-rackup<h2>Saved Events</h2>
+<h2>Saved Events</h2>
 
-<table>
+<nav class="navbar navbar-dark bg-faded">
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Your Shows</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Search</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/logout">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+<table class="table table-striped table-hover table-responsive">
   <thead>
-    <th>
-      id
-    </th>
     <th>
       day
     </th>
@@ -21,7 +35,7 @@ rackup<h2>Saved Events</h2>
 
 <tbody>
   <% @saved.each do |saved|%>
-  <tr>
+  <tr class="active">
     <td>
       <%= saved.id %>
     </td>
