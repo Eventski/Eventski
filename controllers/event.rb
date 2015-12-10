@@ -16,6 +16,10 @@ class EventController < ApplicationController
     'mountain page'
   end
 
+  get '/saved' do
+    erb :saved
+  end
+
   get '/:id' do
     @mtn= Mountain.find(params[:id])
     @mtn.id
