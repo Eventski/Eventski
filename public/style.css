@@ -17,6 +17,10 @@ html, body {
 .showButtonClass {
   float: left; }
 
+.sk {
+  height: 30px;
+  width: 122px; }
+
 .jumbotron {
   background-color: #0d340d;
   text-align: center;
