@@ -96,6 +96,7 @@ var nameVar;
 var urlVar;
 var mtnVar = <%= @mtn.id %>;
 
+
 function genShowValues(value){
   idVar = artistArray[value].id
   dateVar = artistArray[value].date;
@@ -114,7 +115,8 @@ function runAjax(x,y,z){
         name: nameVar,
         id: idVar,
         url: urlVar,
-        mtn: mtnVar
+        mtn: mtnVar,
+        // test: testUrl
     }
   });
 }
