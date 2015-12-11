@@ -22,10 +22,49 @@ background-color:#87CEFA ;
 }
 
 .jumbotron {
-  background-color: rgb(5, 87, 6);
+  background-color: rgb(13, 52, 13);
   text-align: center;
   color: rgb(198, 195, 195);
-  height: 200px;
+  height: 150px;
+  margin-bottom: 20px;
+  padding-bottom: 5%;
+  font-family: 'Merriweather', serif;
+}
+
+nav {
+  margin: 0;
+  color: black;
+  font-size: 15px;
+  margin-top: -20px;
+  color: black;
+  background-color: inherit;
+}
+
+.nav-link {
+  color: black;
+}
+
+.home {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-right: 50%;
+  padding: inherit;
+}
+.saved {
+  background-color: rgb(255, 255, 255);
+}
+.home,
+  h3 {
+    font-size: 30px;
+  }
+
+  .home,
+    .welcome {
+      font-size: 20px;
+    }
+a {
+  color: rgb(13, 52, 13);
 }
 
 h1 {
@@ -61,9 +100,17 @@ h1 {
     width: 10%;
     margin-left: 45%;
     margin-right: 45%;
-    border-radius: 10px;
+    margin-top: 5px;
+    outline: none;
  }
 
+ #submit {
+   outline: none;
+ }
+
+ #address {
+   border-style: solid;
+ }
 
  .mtns {
    list-style-type: none;
@@ -71,10 +118,22 @@ h1 {
  }
 
  .mtn_list {
+   float: right;
    width: 20%;
    margin-left: 40%;
    margin-right: 40%;
    margin-top: 5px;
+ }
+
+ .first {
+   background-color: white;
+   color: green;
+   border-radius: 5px;
+   text-align: center;
+ }
+
+ .form-horizontal-heading {
+   color: black;
  }
 
 #floating-panel {
@@ -106,9 +165,14 @@ padding-left: 11px;
   padding-left: 5%;
 }
 
+.table_head {
+  background-color: white;
+}
+
 #footer {
    position:absolute;
    bottom:0;
    width:100%;
    height:20px;
+   font-size: 12px;
  }

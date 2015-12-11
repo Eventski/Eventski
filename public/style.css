@@ -19,10 +19,45 @@ html, body {
   float: left; }
 
 .jumbotron {
-  background-color: #055706;
+  background-color: #0d340d;
   text-align: center;
   color: #c6c3c3;
-  height: 200px; }
+  height: 150px;
+  margin-bottom: 20px;
+  padding-bottom: 5%;
+  font-family: 'Merriweather', serif; }
+
+nav {
+  margin: 0;
+  color: black;
+  font-size: 15px;
+  margin-top: -20px;
+  color: black;
+  background-color: inherit; }
+
+.nav-link {
+  color: black; }
+
+.home {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-right: 50%;
+  padding: inherit; }
+
+.saved {
+  background-color: white; }
+
+.home,
+h3 {
+  font-size: 30px; }
+
+.home,
+.welcome {
+  font-size: 20px; }
+
+a {
+  color: #0d340d; }
 
 h1 {
   display: inline-block; }
@@ -51,17 +86,34 @@ h1 {
   width: 10%;
   margin-left: 45%;
   margin-right: 45%;
-  border-radius: 10px; }
+  margin-top: 5px;
+  outline: none; }
+
+#submit {
+  outline: none; }
+
+#address {
+  border-style: solid; }
 
 .mtns {
   list-style-type: none;
   font-size: 20px; }
 
 .mtn_list {
+  float: right;
   width: 20%;
   margin-left: 40%;
   margin-right: 40%;
   margin-top: 5px; }
+
+.first {
+  background-color: white;
+  color: green;
+  border-radius: 5px;
+  text-align: center; }
+
+.form-horizontal-heading {
+  color: black; }
 
 #floating-panel {
   margin-top: 5%;
@@ -88,10 +140,14 @@ h1 {
   margin-right: 25%;
   padding-left: 5%; }
 
+.table_head {
+  background-color: white; }
+
 #footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 20px; }
+  height: 20px;
+  font-size: 12px; }
 
 /*# sourceMappingURL=style.css.map */
