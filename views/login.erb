@@ -1,7 +1,9 @@
 
 <div class="login">
 <form class="form-horizontal" action="/login" method="post">
-  <h3 class="form-horizontal-heading">Login</h3>
+  <h3 class="form-horizontal-heading">Login</h3><% if @message %>
+    <%= @message %>
+    <% end %>
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Username</label>
     <div class="col-sm-4">
@@ -50,6 +52,3 @@
 </form>
 
 </div>
-<% if @message %>
-<%= @message %>
-<% end %>

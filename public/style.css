@@ -1,7 +1,9 @@
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  background: url(/imgs/FreeVector-Skiing-Vector.jpg);
+  background-size: cover; }
 
 .mountainsClass {
   float: left;
@@ -14,6 +16,25 @@ html, body {
 
 .showButtonClass {
   float: left; }
+
+.jumbotron {
+  background-color: #055706;
+  text-align: center;
+  color: #c6c3c3;
+  height: 200px; }
+
+h1 {
+  display: inline-block; }
+
+.img-responsive {
+  height: 100px;
+  width: 100px; }
+
+#d1 {
+  float: left; }
+
+#d2 {
+  float: right; }
 
 #save {
   padding: 0px; }
@@ -65,5 +86,11 @@ html, body {
   margin-left: 25%;
   margin-right: 25%;
   padding-left: 5%; }
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px; }
 
 /*# sourceMappingURL=style.css.map */
