@@ -23,13 +23,13 @@
 <br>
 <table class="table table-striped table-hover table-responsive">
   <thead class="table_head">
-    <th>
+    <th style="width: 15%">
       day
     </th>
-    <th>
+    <th style="width: 30%">
       show
     </th>
-    <th>
+    <th style="width: 20%">
       url
     </th>
     <th>
@@ -53,11 +53,12 @@
       <a href=<%= saved.event_url %>>Show page</a>
     </td>
     <td>
-     <form action="/events/events/destroy" method="post">
-       <input type="hidden" name="id" value="<%= saved.id %>">
-       <input type="submit" value="remove"></input>
-     </form>
-   </td>
+      <form action="/events/events/destroy" method="post">
+        <input type="hidden" name="id" value="<%= saved.id %>">
+        <input type="submit" value="remove"></input>
+      </form>
+    </td>
+
 
   </tr>
 </tbody>
