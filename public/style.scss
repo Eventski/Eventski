@@ -4,6 +4,7 @@ html, body {
    padding: 0;
    background: url(/imgs/FreeVector-Skiing-Vector.jpg);
    background-size: cover;
+   z-index: auto;
  }
 .mountainsClass{
  float: left;
@@ -53,6 +54,7 @@ h1 {
    width: 70%;
    margin-left: 15%;
    margin-right: 15%;
+   z-index: 2;
  }
 
  #btn {
@@ -61,6 +63,7 @@ h1 {
     margin-right: 45%;
     border-radius: 10px;
  }
+
 
  .mtns {
    list-style-type: none;
@@ -79,7 +82,7 @@ margin-top: 5%;
 left: 25%;
 right: 25%;
 z-index: 5;
-background-color: #fff;
+// background-color: #fff;
 padding: 5px;
 text-align: center;
 font-family: 'Roboto','sans-serif';
