@@ -14,6 +14,10 @@ Songkick: http://www.songkick.com/api_key_requests/new
 #Instructions
 First time users will need to register. Once logged in either search for events or view saved events.
 
+#Wireframe
+Wireframe can be found at the following location:
+https://moqups.com/kevin3730/lFfmdaPK/p:a16b2c2a4
+
 #Unsolved problems
 A bug exists where the 'Find Mountains' function doesn't clear the cache of selected mountains. 
 
