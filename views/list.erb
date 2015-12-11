@@ -16,22 +16,22 @@
 </nav>
 <div class="home saved">
 
-  <h3><a href=<%= @mtn.mountain_url %>><%= @mtn.mountain_name %></a></h3>
-  <p><strong><%= @mtn.mountain_city %>, <%= @mtn.mountain_state %></strong></p>
-  <% @mtn.mountain_lat %>
-  <% @mtn.mountain_long %>
-  <% @mtn.id %>
+    <h3><a href=<%= @mtn.mountain_url %>><%= @mtn.mountain_name %></a></h3>
+    <p><strong><%= @mtn.mountain_city %>, <%= @mtn.mountain_state %></strong></p>
+    <% @mtn.mountain_lat %>
+    <% @mtn.mountain_long %>
+    <% @mtn.id %>
 
 
 
   <div id='shows'>
-  </p>
-    <strong><a href='events/save'>Go To My Shows</a></strong>
-  </p>
-</div>
+    </p>
+      <strong><a href='events/save'>Go To My Shows</a></strong>
+    </p>
+  </div>
 </div>
 <br>
-  <table class="table table-striped table-hover table-responsive">
+<table class="table table-striped table-hover table-responsive">
     <thead class="table_head">
       <th width = "40%">
         Name
@@ -74,7 +74,7 @@
 <script type="text/javascript">
 var countShows = 0;
 var artistArray = [];
-$.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + <%= @mtn.mountain_lat %> + "," + <%= @mtn.mountain_long %> + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
+$.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + <%= @mtn.mountain_lat %> + "," + <%= @mtn.mountain_long %> + "&apikey=<%= ENV['SONGKICK_API_KEY'] %>&jsoncallback=?",
 function(data){
   console.log(data);
   for (i=0; i< data.resultsPage.totalEntries; i++){

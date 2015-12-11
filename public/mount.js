@@ -13,7 +13,7 @@ $("#btn").click(function() {
 
 
 });//end of document.ready
-//initMap(selectMountain);
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
   zoom: 8,
@@ -58,8 +58,6 @@ var mountainCall = {
   dataType: 'json',
   success: function(data) {
     console.log("hello");
-    // console.log(data);
-    // mountainsArr.push(data);
     mountainsArr = (data);
     console.log(mountainsArr);
   }
@@ -95,39 +93,12 @@ function selectMountain(){
     //  var mtnId = mountainsArr[i].id;
      var absLat = Math.abs(localLat - latitude);
      var absLong = Math.abs(localLong - longitude);
-    //  console.log(mountainsArr[i].name + 'lat: ' + mountainsArr[i].mountain_lat + mountainsArr[i].mountain_long);
          if (absLat <= 0.5 && absLong <= 0.5) {
            mountainsInRange.push(mountainsArr[i]);
          }
        }
      }
 
-           //break;
-          //  countMountains = countMountains + 1;
-//            var element = document.createElement("input");
-//            var mtnId = mountainsArr[i].id;
-//            element.className = 'mountainsClass'
-//           //  element.id = mtnId;
-//            console.log(mtnId);
-//            element.type = 'button';
-//            element.name = 'selectButton';
-//            element.value = 'select';
-//            element.onclick = function (){
-//               location.href = "events/"+mtnId;
-//             };
-//            $('#mountainsId').append(element);
-//            $('#mountainsId').append('<div>'+ localName+'</div>');
-//            console.log(localName + '--------')
-//            console.log('manual lat: ' + localLat);
-//            console.log('manual long: ' + localLong);
-//         //  var tempArr = [];
-//         //  tempArr.push(localLat, localLong, localName);
-//         //  mountainsInRange.push(tempArr);
-//          }
-//   }
-//   return mountainsInRange;
-//
-// }
 
 function buildClickableList(arrayOfMountains) {
   for (var i = 0; i < arrayOfMountains.length; i++) {
@@ -137,68 +108,3 @@ function buildClickableList(arrayOfMountains) {
   // append to DOM
   // loop through
 }
-
-//function to be run when mountain button is selected. This sets global 'selectMountainLat' and Long
-//so that songkickFunction can pull these coordinates
-// function chooseOne(x){
-//   var x = x-1;
-//   var currentMountain = new Object();
-//   currentMountain.latitude = mountainsInRange[x][0];
-//   currentMountain.longitude = mountainsInRange[x][1];
-//   currentMountain.name = mountainsInRange[x][2];
-//   selectMountainLat = currentMountain.latitude;
-//   selectMountainLong = currentMountain.longitude;
-//   selectMountainName = currentMountain.name;
-// }
-
-//
-// function songkickFunction(){
-//   $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + selectMountainLat + "," + selectMountainLong + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
-//   function(data){
-//     console.log('songkick runs');
-//     console.log('lat' + selectMountainLat);
-//     console.log('lat' + selectMountainLong);
-//     //
-//     // var titleNode = document.getElementById("titleID");
-//     // titleNode.innerHTML = '';
-//     // $('#titleID').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
-//
-//     var titleNode = document.getElementById("titleId");
-//     titleNode.innerHTML = '';
-//     $('#titleId').append('</p><strong><div>'+'shows near ' + selectMountainName + '</div></strong></p>');
-//
-//     var showsNode = document.getElementById("showsID");
-//     showsNode.innerHTML = '';
-//
-//     for (i=0; i< data.resultsPage.totalEntries; i++){
-//       countShows = countShows + 1;
-//       var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
-//       var date = data.resultsPage.results.event[i].start.date;
-//       var location = data.resultsPage.results.event[i].location.city;
-//       var tempArr = [];
-//       ///////
-//       var element = document.createElement("input");
-//       element.className = 'showButtonClass'
-//       element.id = countShows;
-//       element.type = 'button';
-//       element.name = 'selectShowsButton';
-//       element.value = 'select';
-//       element.onclick = function (){
-//          addShow(this.id);
-//        };
-//       ///////
-//       console.log(element.className, element.id, element.type, element.name, element.value);
-//       tempArr.push(name, date, location, tempArr);
-//       showsArr.push(tempArr);
-//       // $('#showsID').append('<div>'+tempArr+'</div>');
-//       $('#showsID').append(element);
-//       $('#showsID').append('<div>'+ tempArr+'</div>');
-//     }
-//   });
-// }
-
-// function addShow(x){
-//   var x = x -1;
-//   var currentShow = showsArr[x][0];
-//   alert(currentShow + ' added');
-// }

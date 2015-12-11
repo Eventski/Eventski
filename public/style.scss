@@ -23,7 +23,7 @@ background-color:#87CEFA ;
 .jumbotron {
   background-color: rgb(13, 52, 13);
   text-align: center;
-  color: rgb(198, 195, 195);
+  color: rgb(227, 227, 227);
   height: 150px;
   margin-bottom: 20px;
   padding-bottom: 5%;
@@ -137,16 +137,16 @@ h1 {
  }
 
 #floating-panel {
-margin-top: 5%;
-left: 25%;
-right: 25%;
-z-index: 5;
-// background-color: #fff;
-padding: 5px;
-text-align: center;
-font-family: 'Roboto','sans-serif';
-line-height: 30px;
-padding-left: 11px;
+  margin-top: 5%;
+  left: 25%;
+  right: 25%;
+  z-index: 5;
+  // background-color: #fff;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 11px;
 }
 
 .login {
