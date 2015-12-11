@@ -10,3 +10,16 @@ No material is required for users. Developers will need to have their own API ke
 Google maps: https://developers.google.com/maps/signup?hl=en
 
 Songkick: http://www.songkick.com/api_key_requests/new
+
+#Instructions
+First time users will need to register. Once logged in either search for events or view saved events.
+
+#Unsolved problems
+A bug exists where the 'Find Mountains' function doesn't clear the cache of selected mountains. 
+
+#Future enhancements
+Add markers to the mountins map.
+Build mountains database to cover North America.
+
+These enhacements are currently being built.
+
