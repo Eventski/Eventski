@@ -7,7 +7,10 @@ class ApplicationController < Sinatra::Base
 
   ActiveRecord::Base.establish_connection(
     :database => ENV['DB_NAME'],
-    :adapter => 'postgresql'
+    :adapter => 'postgresql',
+    :username => 'postgres',
+    :host => 'localhost',
+    :password => ENV['DB_PASSWORD']
   )
 
 set :views, File.expand_path('../../views', __FILE__)
