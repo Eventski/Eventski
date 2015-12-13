@@ -5,6 +5,7 @@
     <title>Eventski</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/style.css" media="screen" title="no title" charset="utf-8">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script type="text/javascript" src="/app.js"></script>
@@ -14,11 +15,22 @@
     </script>
   </head>
   <body>
-    <h1>Eventski</h1>
-    <a href="/logout">Logout</a>
+    <div class="jumbotron">
+      <div class="container">
+
+
+        <img class="img-responsive" id="d1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ski_trail_rating_symbol-double_black_diamond.svg/200px-Ski_trail_rating_symbol-double_black_diamond.svg.png" alt="" />
+        <h1>Eventski</h1>
+        <img class="img-responsive" id="d2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ski_trail_rating_symbol-double_black_diamond.svg/200px-Ski_trail_rating_symbol-double_black_diamond.svg.png" alt="" />
+      </div>
+    </div>
+
 
 
     <%= yield %>
 
+    <div id="footer">
+        <p>Image courtesy of <a rel="nofollow" href="http://www.vecteezy.com">Vecteezy.com</a></p>
+    </div>
   </body>
 </html>

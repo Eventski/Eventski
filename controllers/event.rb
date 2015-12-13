@@ -64,8 +64,7 @@ class EventController < ApplicationController
     'testing'
     @saved = Event.find(params[:id])
     @saved.destroy
-    # redirect ('/events/save')
-    # erb :saved
+
   end
 
 end

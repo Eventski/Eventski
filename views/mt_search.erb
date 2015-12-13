@@ -1,19 +1,31 @@
+<nav class="navbar navbar-dark bg-faded">
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="events/events/save">Your Shows</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/mountains">Search</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/logout">Logout</a>
+    </li>
+  </ul>
+</nav>
 <div id="floating-panel">
   <input id="address" type="textbox" placeholder="Input Location">
-  <input id="submit" type="button" value="Submit">
+  <input class="btn btn-default" id="submit" type="button" value="Submit">
 </div>
-<div id="map"></div>
+<div id="map">map here</div>
 
-<button id="btn" type="button" name="button">Find Mountains</button>
-<div id="mountainsId">
-
-</div>
-<div id="titleId">
+<button class="btn btn-default" id="btn" type="button" name="button">Find Mountains</button>
+<div class="mtn_list">
 
 </div>
-<div id="showsID">
 
-</div>
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&signed_in=true&callback=initMap"
     async defer>

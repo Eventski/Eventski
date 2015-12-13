@@ -1,19 +1,38 @@
-<%= @mtn.mountain_name %></p>
-<%= @mtn.mountain_city %></p>
-<%= @mtn.mountain_state %></p>
-<%= @mtn.mountain_url %></p>
-<%= @mtn.mountain_lat %>;
-<%= @mtn.mountain_long %>
-<% @mtn.id %>
+<nav class="navbar navbar-dark bg-faded">
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="events/events/save">Your Shows</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/mountains">Search</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/logout">Logout</a>
+    </li>
+  </ul>
+</nav>
+<div class="home saved">
+
+    <h3><a href=<%= @mtn.mountain_url %>><%= @mtn.mountain_name %></a></h3>
+    <p><strong><%= @mtn.mountain_city %>, <%= @mtn.mountain_state %></strong></p>
+    <% @mtn.mountain_lat %>
+    <% @mtn.mountain_long %>
+    <% @mtn.id %>
 
 
 
-<div id='shows'>
-</p>
-  <strong><a href='events/save'>Go To My Shows</a></strong>
-</p>
-  <table>
-    <thead>
+  <div id='shows'>
+    </p>
+      <strong><a href='events/save'>Go To My Shows</a></strong>
+    </p>
+  </div>
+</div>
+<br>
+<table class="table table-striped table-hover table-responsive">
+    <thead class="table_head">
       <th width = "40%">
         Name
       </th>
@@ -27,11 +46,11 @@
         URL
       </th>
       <th>
-        Save Show
+        Save
       </th>
     </thead>
     <tbody>
-      <tr>
+      <tr class="active">
         <td id="name">
 
         </td>
@@ -50,15 +69,16 @@
       </tr>
     </tbody>
   </table>
-</div>
+
 
 <script type="text/javascript">
 var countShows = 0;
 var artistArray = [];
-$.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + <%= @mtn.mountain_lat %> + "," + <%= @mtn.mountain_long %> + "&apikey=NGGZAUSLFDnYDLrV&jsoncallback=?",
+$.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + <%= @mtn.mountain_lat %> + "," + <%= @mtn.mountain_long %> + "&apikey=<%= ENV['SONGKICK_API_KEY'] %>&jsoncallback=?",
 function(data){
   console.log(data);
-  for (i=0; i< data.resultsPage.totalEntries; i++){
+    for (i=0; i< data.resultsPage.results.event.length; i++){
+  // for (i=0; i< data.resultsPage.totalEntries; i++){
     var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
     var date = data.resultsPage.results.event[i].start.date;
     var location = data.resultsPage.results.event[i].location.city;
@@ -75,7 +95,7 @@ function(data){
     $("#name").append(artistArray[i].name + '</p>');
     $("#date").append(artistArray[i].date + '</p>');
     $("#location").append(artistArray[i].location + '</p>');
-    $("#url").append('<a href='+artistArray[i].url+'>go to website</a></p>');
+    $("#url").append('<a href='+ artistArray[i].url+'>Show page</a></p>');
       countShows = countShows + 1;
       var element = document.createElement("input");
       element.className = 'mountainsClass'

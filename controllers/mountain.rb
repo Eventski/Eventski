@@ -6,11 +6,6 @@ class MountainController < ApplicationController
     erb :mt_search
   end
 
-  post '/results' do
-    "Hello there"
-    erb :results
-  end
-
   get '/mountain' do
     authorization_check
     @mountains = Mountain.all

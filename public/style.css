@@ -1,7 +1,10 @@
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  background: url(/imgs/FreeVector-Skiing-Vector.jpg);
+  background-size: cover;
+  z-index: auto; }
 
 .mountainsClass {
   float: left; }
@@ -14,25 +17,137 @@ html, body {
 .showButtonClass {
   float: left; }
 
+.jumbotron {
+  background-color: #0d340d;
+  text-align: center;
+  color: #e3e3e3;
+  height: 150px;
+  margin-bottom: 20px;
+  padding-bottom: 5%;
+  font-family: 'Merriweather', serif; }
+
+nav {
+  margin: 0;
+  color: black;
+  font-size: 15px;
+  margin-top: -20px;
+  color: black;
+  background-color: inherit; }
+
+.nav-link {
+  color: black; }
+
+.home {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-right: 50%;
+  padding: inherit; }
+
+.saved {
+  background-color: white; }
+
+.home,
+h3 {
+  font-size: 30px; }
+
+.home,
+.welcome {
+  font-size: 20px; }
+
+a {
+  color: #0d340d; }
+
+h1 {
+  display: inline-block; }
+
+.img-responsive {
+  height: 100px;
+  width: 100px; }
+
+#d1 {
+  float: left; }
+
+#d2 {
+  float: right; }
+
 #save {
   padding: 0px;
   background-color: lightgrey; }
 
 #map {
   height: 50%;
-  width: 70%; }
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  z-index: 2; }
+
+#btn {
+  width: 10%;
+  margin-left: 45%;
+  margin-right: 45%;
+  margin-top: 5px;
+  outline: none; }
+
+#submit {
+  outline: none; }
+
+#address {
+  border-style: solid; }
+
+.mtns {
+  list-style-type: none;
+  font-size: 20px; }
+
+.mtn_list {
+  float: right;
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 5px; }
+
+.first {
+  background-color: white;
+  color: green;
+  border-radius: 5px;
+  text-align: center; }
+
+.form-horizontal-heading {
+  color: black; }
 
 #floating-panel {
-  position: absolute;
-  top: 10px;
+  margin-top: 5%;
   left: 25%;
+  right: 25%;
   z-index: 5;
-  background-color: #fff;
   padding: 5px;
-  border: 1px solid #999;
   text-align: center;
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
   padding-left: 11px; }
+
+.login {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-left: 5%; }
+
+.register {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-left: 5%; }
+
+.table_head {
+  background-color: white; }
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  font-size: 12px; }
 
 /*# sourceMappingURL=style.css.map */
