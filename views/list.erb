@@ -52,7 +52,7 @@
         Save
       </th>
     </thead>
-    <tbody>
+    <tbody id='apptable'>
       <tr class="active">
         <td id="name">
 
@@ -78,40 +78,48 @@
 var countShows = 0;
 var artistArray = [];
 $.getJSON("http://api.songkick.com/api/3.0/events.json?location=geo:" + <%= @mtn.mountain_lat %> + "," + <%= @mtn.mountain_long %> + "&apikey=<%= ENV['SONGKICK_API_KEY'] %>&jsoncallback=?",
-function(data){
-  console.log(data);
+  function(data){
+    // console.log(data);
     for (i=0; i< data.resultsPage.results.event.length; i++){
-  // for (i=0; i< data.resultsPage.totalEntries; i++){
-    var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
-    var date = data.resultsPage.results.event[i].start.date;
-    var location = data.resultsPage.results.event[i].location.city;
-    var url = data.resultsPage.results.event[i].performance[0].artist.uri;
-    var currentShow = new Object();
-      currentShow.name = name;
-      currentShow.date = date;
-      currentShow.location = location;
-      currentShow.url = url;
-    artistArray.push(currentShow);
-  }
-  for (var i = 0; i < artistArray.length; i++) {
-    console.log(artistArray[i].name)
-    $("#name").append(artistArray[i].name + '</p>');
-    $("#date").append(artistArray[i].date + '</p>');
-    $("#location").append(artistArray[i].location + '</p>');
-    $("#url").append('<a href='+ artistArray[i].url+'>Show page</a></p>');
-      countShows = countShows + 1;
-      var element = document.createElement("input");
-      element.className = 'mountainsClass'
-      element.id = countShows;
-      element.type = 'button';
-      element.name = 'selectButton';
-      element.value = 'save';
-      element.onclick = function (){
-        genShowValues(this.id-1);
+      for (i=0; i< data.resultsPage.totalEntries; i++){
+        var name = data.resultsPage.results.event[i].performance[0].artist.displayName;
+        var date = data.resultsPage.results.event[i].start.date;
+        var location = data.resultsPage.results.event[i].location.city;
+        var url = data.resultsPage.results.event[i].performance[0].artist.uri;
+        var currentShow = new Object();
+        currentShow.name = name;
+        currentShow.date = date;
+        currentShow.location = location;
+        currentShow.url = url;
+        artistArray.push(currentShow);
       }
-    $("#save").append(element);
-    $("#save").append('</p>');
-}})
+      for (var i = 0; i < artistArray.length; i++) {
+        countShows = countShows + 1;
+        var tableRow = $('<tr>');
+        var tname = artistArray[i].name;
+        var tdate = artistArray[i].date;
+        var tlocation = artistArray[i].location;
+        var ref = ('<a href =' +artistArray[i].url+'>Show page</a></p>');
+        var element = document.createElement("button");
+        element.className = 'mountainsClass'
+        element.id = countShows;
+        element.innerHTML = 'save';
+        element.onclick = function (){
+          genShowValues(this.id-1);
+        }
+
+        var telement = document.createElement("td");
+        telement.appendChild(element);
+        $('#apptable').append(tableRow);
+        tableRow.append('<td>'+tname+'</td>');
+        tableRow.append('<td>'+tdate+'</td>');
+        tableRow.append('<td>'+tlocation+'</td>');
+        tableRow.append('<td>'+ref+'</td>');
+        tableRow.append(telement);
+      }
+    }
+  }
+);
 
 var idVar;
 var dateVar;

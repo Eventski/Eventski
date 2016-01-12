@@ -24,6 +24,10 @@ background-color:#87CEFA ;
   height: 30px;
   width: 122px;
 }
+table tr {background-color:rgb(154, 200, 204)}
+table td {background-color:rgb(154, 200, 204)}
+table td tr {background-color:rgb(154, 200, 204)}
+tbody tr tr {color:red;}
 
 .jumbotron {
   background-color: rgb(13, 52, 13);

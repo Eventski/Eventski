@@ -21,6 +21,18 @@ html, body {
   height: 30px;
   width: 122px; }
 
+table tr {
+  background-color: #9ac8cc; }
+
+table td {
+  background-color: #9ac8cc; }
+
+table td tr {
+  background-color: #9ac8cc; }
+
+tbody tr tr {
+  color: red; }
+
 .jumbotron {
   background-color: #0d340d;
   text-align: center;
