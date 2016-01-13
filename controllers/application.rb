@@ -13,8 +13,8 @@ class ApplicationController < Sinatra::Base
   end
 
   ActiveRecord::Base.establish_connection(
-    :database => db_URL,
-    # :database => 'eventski',
+    # :database => db_URL,
+    :database => 'eventski',
     # :database => ENV['DB_NAME'],
     :adapter => 'postgresql'
     # :username => 'postgres',
