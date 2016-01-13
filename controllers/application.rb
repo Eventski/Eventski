@@ -6,15 +6,15 @@ class ApplicationController < Sinatra::Base
   require 'dotenv'
   Dotenv.load
 
-  # db_URL = 'eventski'
-  #
-  # if ENV['RACK_ENV'] === 'production'
-  #   db_URL = ENV[DATABASE_URL]
-  # end
+  db_URL = 'eventski'
+  
+  if ENV['RACK_ENV'] === 'production'
+    db_URL = ENV[DATABASE_URL]
+  end
 
   ActiveRecord::Base.establish_connection(
-    # :database => db_URL,
-    :database => 'eventski',
+    :database => db_URL,
+    # :database => 'eventski',
     # :database => ENV['DB_NAME'],
     :adapter => 'postgresql'
     # :username => 'postgres',
