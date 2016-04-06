@@ -5,7 +5,7 @@ Find events at your favorite ski mountains.
 Eventski allows ski and music enthusiasts to make the most of their day at the slopes. A user can input the region in which they're planning to visit (resort name, town, zip etc.) and see a list of neighboring mountains. From there a user can select a resort and see all events coming up at that location and the surrounding area. Custom user pages allow people to add events to their calendar and plan day trips/vacations.
 
 ###Deployment
-view at: http://162.243.5.64/
+view at: http://104.131.75.146/
 
 ###Technology
 HTML, CSS, JavaScript, jQuery, Sinatra, Bootstrap, Postgresql, ActiveRecord, BCrypt, Github
